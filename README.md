@@ -1,64 +1,80 @@
-TO-DO Notes - Code for 5.1-5.3 Testing Codelab
-============================================================================
+# Location Reminder
 
-Code for the Advanced Android Kotlin Testing Codelab 5.1-5.3
+A Todo list app with location reminders that remind the user to do something when he reaches a specific location. The app will require the user to create an account and login to set and access reminders.
 
-Introduction
-------------
+## Getting Started
 
-TO-DO Notes is an app where you to write down tasks to complete. The app displays them in a list.
-You can then mark them as completed or not, filter them and delete them.
+1. Clone the project to your local machine.
+2. Open the project using Android Studio.
 
-![App main screen, screenshot](screenshot.png)
+### Dependencies
 
-This codelab has four branches, representing different code states:
+```
+1. A created project on Firebase console.
+2. A create a project on Google console.
+```
 
-* [starter_code](https://github.com/googlecodelabs/android-testing/tree/starter_code)
-* [end_codelab_1](https://github.com/googlecodelabs/android-testing/tree/end_codelab_1)
-* [end_codelab_2](https://github.com/googlecodelabs/android-testing/tree/end_codelab_2)
-* [end_codelab_3](https://github.com/googlecodelabs/android-testing/tree/end_codelab_3)
+### Installation
 
-The codelabs in this series are:
-* [Testing Basics](https://codelabs.developers.google.com/codelabs/advanced-android-kotlin-training-testing-basics)
-* [Introduction to Test Doubles and Dependency Injection](https://codelabs.developers.google.com/codelabs/advanced-android-kotlin-training-testing-test-doubles)
-* [Survey of Testing Topics](https://codelabs.developers.google.com/codelabs/advanced-android-kotlin-training-testing-survey)
+Step by step explanation of how to get a dev environment running.
+
+```
+1. To enable Firebase Authentication:
+        a. Go to the authentication tab at the Firebase console and enable Email/Password and Google Sign-in methods.
+        b. download `google-services.json` and add it to the app.
+2. To enable Google Maps:
+    a. Go to APIs & Services at the Google console.
+    b. Select your project and go to APIs & Credentials.
+    c. Create a new api key and restrict it for android apps.
+    d. Add your package name and SHA-1 signing-certificate fingerprint.
+    c. Enable Maps SDK for Android from API restrictions and Save.
+    d. Copy the api key to the `google_maps_api.xml`
+3. Run the app on your mobile phone or emulator with Google Play Services in it.
+```
+
+## Testing
+
+Right click on the `test` or `androidTest` packages and select Run Tests
+
+### Break Down Tests
+
+Explain what each test does and why
+
+```
+1.androidTest
+        //TODO: Students explain their testing here.
+2. test
+        //TODO: Students explain their testing here.
+```
+
+## Project Instructions
+    1. Create a Login screen to ask users to login using an email address or a Google account.  Upon successful login, navigate the user to the Reminders screen.   If there is no account, the app should navigate to a Register screen.
+    2. Create a Register screen to allow a user to register using an email address or a Google account.
+    3. Create a screen that displays the reminders retrieved from local storage. If there are no reminders, display a   "No Data"  indicator.  If there are any errors, display an error message.
+    4. Create a screen that shows a map with the user's current location and asks the user to select a point of interest to create a reminder.
+    5. Create a screen to add a reminder when a user reaches the selected location.  Each reminder should include
+        a. title
+        b. description
+        c. selected location
+    6. Reminder data should be saved to local storage.
+    7. For each reminder, create a geofencing request in the background that fires up a notification when the user enters the geofencing area.
+    8. Provide testing for the ViewModels, Coroutines and LiveData objects.
+    9. Create a FakeDataSource to replace the Data Layer and test the app in isolation.
+    10. Use Espresso and Mockito to test each screen of the app:
+        a. Test DAO (Data Access Object) and Repository classes.
+        b. Add testing for the error messages.
+        c. Add End-To-End testing for the Fragments navigation.
 
 
-Pre-requisites
---------------
+## Student Deliverables:
 
-You should be familiar with:
+1. APK file of the final project.
+2. Git Repository or zip file with the code.
 
-* The Kotlin programming language, including [Kotlin coroutines](https://developer.android.com/kotlin/coroutines) and their interaction with [Android Jetpack components](https://developer.android.com/topic/libraries/architecture/coroutines).
-* The following core Android Jetpack libraries: [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel),
- [LiveData](https://developer.android.com/topic/libraries/architecture/livedata),
-  [Navigation Component](https://developer.android.com/guide/navigation) and 
-  [Data Binding](https://developer.android.com/topic/libraries/data-binding).
-* Application architecture, following the pattern from the [Guide to app architecture](https://developer.android.com/jetpack/docs/guide) and [Android Fundamentals codelabs](https://developer.android.com/courses/kotlin-android-fundamentals/toc).
+## Built With
 
+* [Koin](https://github.com/InsertKoinIO/koin) - A pragmatic lightweight dependency injection framework for Kotlin.
+* [FirebaseUI Authentication](https://github.com/firebase/FirebaseUI-Android/blob/master/auth/README.md) - FirebaseUI provides a drop-in auth solution that handles the UI flows for signing
+* [JobIntentService](https://developer.android.com/reference/androidx/core/app/JobIntentService) - Run background service from the background application, Compatible with >= Android O.
 
-Getting Started
----------------
-
-1. Download and run the app.
-2. Check out one of the codelabs mentioned above.
-
-License
--------
-
-Copyright 2019 Google, Inc.
-
-Licensed to the Apache Software Foundation (ASF) under one or more contributor
-license agreements.  See the NOTICE file distributed with this work for
-additional information regarding copyright ownership.  The ASF licenses this
-file to you under the Apache License, Version 2.0 (the "License"); you may not
-use this file except in compliance with the License.  You may obtain a copy of
-the License at
-
-  http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-License for the specific language governing permissions and limitations under
-the License.
+## License

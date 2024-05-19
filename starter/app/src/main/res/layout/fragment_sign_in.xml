@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#201D1D">
+
+    <ImageView
+        android:id="@+id/img_map"
+        android:layout_width="0dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:contentDescription="@string/welcome_to_the_location_reminder_app"
+        android:src="@drawable/map"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_email"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/design_default_color_error"
+        android:drawableStart="@drawable/fui_ic_mail_white_24dp"
+        android:text="@string/sign_in_with_email"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintBottom_toTopOf="@+id/btn_google"
+        app:layout_constraintEnd_toEndOf="@id/btn_google"
+        app:layout_constraintStart_toStartOf="@id/btn_google" />
+
+    <Button
+        android:id="@+id/btn_google"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="@dimen/margin_large"
+        android:layout_marginVertical="@dimen/padding_medium"
+        android:backgroundTint="@color/white"
+        android:drawableStart="@drawable/fui_ic_googleg_color_24dp"
+        android:text="@string/sign_in_with_google"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
